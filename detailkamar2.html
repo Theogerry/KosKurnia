@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kost Kurnia - Detail Kamar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'helvetica';
+            background-color: #f4f4f4;
+        }
+        header h1 {
+            font-size: 24px;
+        }
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+        .room-images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .room-images img {
+            max-height: 600px;
+            object-fit:inherit;
+            border-radius: 8px;
+        }
+        .room-images .thumbnail {
+            max-width: 80px;
+            max-height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+        }
+        .room-images .thumbnail:hover {
+            border-color: #0d6efd;
+        }
+        .price-box {
+            background-color: #0d6efd;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .price-box h5 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .price-box .price {
+            font-size: 2rem;
+            margin: 0.5rem 0;
+        }
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+      
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter/InterRegular.ttf') format('truetype');
+    font-family: 'helvetica';
+    src: url('/fonts/helvetica/Helvetica.ttf');
+    font-family: 'Inter2';
+    src: url('/fonts/inter/Inter-Italic-VariableFont_opsz\,wght.ttf');
+    font-family: 'Inter3';
+    src: url('/fonts/inter/Inter_28pt-Medium.ttf');
+    font-family: 'Inter4';
+    src: url('/fonts/inter/Inter_28pt-MediumItalic.ttf');
+    font-family: 'Inter5';
+    src: url('/fonts/inter/Inter_28pt-SemiBold.ttf');
+}
+.room-images {
+    padding: o 2rem;
+      position: relative;
+      width: 1300px;
+      text-align: center;
+      margin: auto;
+    }
+    .room-images img {
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: cover;
+    }
+    .prev-btn, .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .prev-btn {
+      left: 10px;
+    }
+    .next-btn {
+      right: 10px;
+    }
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.thumbnail {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+.thumbnail.active {
+    border-color: #0d6efd;
+    position: relative;
+}
+
+.thumbnail.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #0d6efd;
+    position: absolute;
+    bottom: 800px;
+    left: 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+
+.price-box {
+    padding: 2rem;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+.harga-container {
+      background-color: #0b4a5a;
+      color: white;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+    .btn-chat {
+      background-color: white;
+      color: #0b4a5a;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+    .info-container {
+    max-width: 1200px;
+    margin: auto;
+}
+          /* Style dasar untuk navbar */
+/* Warna teks default */
+.nav-link {
+    color: #072f6a;
+  position: relative; /* Warna default */
+  padding-bottom: 5px;
+  text-decoration: none;
+  transition: color 0.6s ease, border-color 0.6s ease;
+}
+
+/* Warna teks dan garis bawah untuk item aktif */
+.nav-link.active {
+  color: #072f6a !important;
+  font-weight: bold !important; /* Warna teks ketika aktif */
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #072f6a; /* Warna garis */
+  transition: width 0.6s ease;
+}
+
+/* Warna teks saat hover */
+.nav-link:hover {
+  color: #072f6a; /* Warna teks saat hover */
+}
+
+/* Hover efek garis bawah */
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #072f6a; /* Warna garis saat hover */
+}
+
+.navbar-brand {
+    font-family: 'Inter5';
+    color: #01d0d2;
+    font-weight: bold;
+    font-size: 2vw;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    z-index: 1000;
+    background-color: #f4f4f4;
+}
+.main_content{
+    padding-top: 80px;
+}
+.hero-section {
+    background: linear-gradient(to bottom, #f0faff, #ffffff);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar ul li a {
+  color: #072f6a; /* Warna teks default */
+  text-decoration: none; /* Hilangkan garis bawah */
+  transition: color 0.6s ease; /* Animasi perubahan warna */
+}
+
+.navbar ul li a:hover {
+  color: #072f6a; /* Warna teks saat hover */
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color: #2a8e9e;">KOST KURNIA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="beranda.html" id="beranda">Beranda</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="daftarkamar.html" id="daftar-kamar">Daftar Kamar</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="tentang.html" id="tentang">Tentang</a>
+          </li>
+          <li class="nav-item ms-4">
+            <a class="btn btn-danger text-white" style="background-color: #072f6a ;" href="login.html">Masuk</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <br><br><br><br>
+    <!-- Breadcrumb -->
+    <div class="container my-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="daftarkamar.html"style="color:black;">Daftar Kamar</a></li>
+                <li class="breadcrumb-item active" aria-current="page"  style="color: #01d0d2;">Detail Kamar</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="room-images text-center rounded">
+        <button class="prev-btn" onclick="changeImageIndex(-1)">&#10094;</button>
+        <img id="mainImage" src="assets/20241125_112559.jpg" alt="Main Image" class="img-fluid rounded" style=" background-color: #180d39;
+      opacity: 0.3;">  <div class="bg-white text-danger px-2 py-1 fw-bold" style="position: absolute; top: 310px; left: 620px;">Penuh</div>
+        <button class="next-btn" onclick="changeImageIndex(1)">&#10095;</button>
+        <div class="thumbnail-container" style="position: absolute; top: 650px;">
+            <img src="assets/20241125_112559.jpg" alt="Thumbnail 1" class="thumbnail rounded" onclick="setCurrentImage(0)">
+            <img src="assets/dalam kamar 1.jpg" alt="Thumbnail 2" class="thumbnail rounded" onclick="setCurrentImage(1)">
+            <img src="assets/kamar mandi.jpg" alt="Thumbnail 3" class="thumbnail rounded" onclick="setCurrentImage(2)">
+            <img src="assets/listrik.jpg" alt="Thumbnail 4" class="thumbnail rounded" onclick="setCurrentImage(3)">
+        </div>
+    </div>
+    <!-- Informasi Kamar -->
+    <div class="col-md-4" style="position: absolute; top: 990px; left: 990px;">
+        <div class="harga-container">
+          <h4 style="font-family: 'Inter5';">Harga (Bulanan)</h4>
+          <p style=" font-family: 'helvetica';">Mulai dari</p>
+          <h5 style="font-family: 'Inter5';">Rp 850.000 / 1 org</h5><br>
+          <button class="btn-chat mt-3" style="width: 200px; font-family: 'Inter5';" >Chat</button>
+        </div>
+      </div>
+    </div>
+    
+<br><br><br><br><br><br><br>
+        <!-- Room Information -->
+         <div class="info-container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 style="font-family: 'Inter5';">Kamar Tipe (A)</h2>
+                <p class="text-danger" style="font-family: 'helvetica';">Penuh</p>
+                <hr style="border: 1px solid black; width: 73%;">
+                <p></p>
+                  </div>
+                <h4 style="font-family: 'Inter5';">Spesifikasi Kamar</h4>
+                <ul style="font-family: 'helvetica';">
+                    <li>> Luas Kamar: 3x3,5 meter</li>
+                    <li>> Sudah Termasuk Air</li>
+                    <li>> Belum Termasuk Listrik</li>
+                    <li>> Dapat Ditempati Hingga 2 orang</li>
+                </ul>
+                <hr style="border: 1px solid black; width: 50%;">
+                <h4 style="font-family: 'Inter5';">Fasilitas Kamar</h4>
+                <ul style="font-family: 'helvetica';">
+                    <li>> AC</li>
+                    <li>> Kamar Mandi Dalam</li>
+                    <li>> Springbed</li>
+                    <li>> Lemari Pakaian</li>
+                    <li>> Meja</li>
+                    <li>> Bantal</li>
+                </ul>
+                <hr style="border: 1px solid black; width: 50%;">
+                <h4 style="font-family: 'Inter5';">Fasilitas Umum</h4>
+                <ul style="font-family: 'helvetica';">
+                    <li>> WiFi</li>
+                    <li>> Parkir Motor</li>
+                    <li>> Jemuran Pakaian</li>
+                    <li>> Dapur Bersama</li>
+                    <li>> CCTV</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+
+    <!-- Footer -->
+    <footer style="background-color: #f4f4f4;">
+        <p style="font-family: 'helvetica';">&copy; 2024 Kost Kurnia. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+        }
+        let images = ["assets/20241125_112559.jpg", "assets/dalam kamar 1.jpg", "assets/kamar mandi.jpg", "assets/listrik.jpg"];
+    let currentIndex = 0;
+
+    function changeImageIndex(step) {
+        currentIndex = (currentIndex + step + images.length) % images.length;
+        updateImage();
+    }
+
+    function setCurrentImage(index) {
+        currentIndex = index;
+        updateImage();
+    }
+
+    function updateImage() {
+        document.getElementById('mainImage').src = images[currentIndex];
+        let thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach((thumb, index) => {
+            thumb.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    // Initial call to set the active thumbnail on load
+    updateImage();
+    </script>
+</body>
+</html>

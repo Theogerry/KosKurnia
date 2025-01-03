@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kita</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+.nav-link {
+    color: #072f6a;
+  position: relative; /* Warna default */
+  padding-bottom: 5px;
+  text-decoration: none;
+  transition: color 0.6s ease, border-color 0.6s ease;
+}
+
+/* Warna teks dan garis bawah untuk item aktif */
+.nav-link.active {
+  color: #072f6a !important;
+  font-weight: bold !important; /* Warna teks ketika aktif */
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #072f6a; /* Warna garis */
+  transition: width 0.6s ease;
+}
+
+/* Warna teks saat hover */
+.nav-link:hover {
+  color: #072f6a; /* Warna teks saat hover */
+}
+
+/* Hover efek garis bawah */
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #072f6a; /* Warna garis saat hover */
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter/InterRegular.ttf') format('truetype');
+    font-family: 'helvetica';
+    src: url('/fonts/helvetica/Helvetica.ttf');
+    font-family: 'Inter2';
+    src: url('/fonts/inter/Inter-Italic-VariableFont_opsz\,wght.ttf');
+    font-family: 'Inter3';
+    src: url('/fonts/inter/Inter_28pt-Medium.ttf');
+    font-family: 'Inter4';
+    src: url('/fonts/inter/Inter_28pt-MediumItalic.ttf');
+    font-family: 'Inter5';
+    src: url('/fonts/inter/Inter_28pt-SemiBold.ttf');
+}
+.navbar-brand {
+    font-family: 'Inter5';
+    color: #01d0d2;
+    font-weight: bold;
+    font-size: 2vw;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    z-index: 1000;
+    background-color: #f4f4f4;
+}
+
+.navbar ul li a {
+  color: #072f6a; /* Warna teks default */
+  text-decoration: none; /* Hilangkan garis bawah */
+  transition: color 0.6s ease; /* Animasi perubahan warna */
+}
+
+.navbar ul li a:hover {
+  color: #072f6a; /* Warna teks saat hover */
+  font-weight: bold;
+}
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #180d39;
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color: #2a8e9e;">KOST KURNIA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="beranda.html" id="beranda">Beranda</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="daftarkamar.html" id="daftar-kamar">Daftar Kamar</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="tentang.html" id="tentang">Tentang</a>
+          </li>
+          <li class="nav-item ms-4">
+            <a class="btn btn-danger text-white" style="background-color: #072f6a ;" href="login.html">Masuk</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<br><br>
+<main class="container mt-5">
+    <section class="text-center">
+        <h2 class="fw-bold" style="font-family: 'Inter5'; color: #180d39;">TENTANG KITA</h2> 
+        <hr style=" all:inherit; border: 3px solid #180d39!important; width: 7%; margin: 10px auto;">  <br>
+        <h3 style="font-family: 'Inter5';">Profil dan Sejarah Singkat</h3>
+        <p style="font-family: 'helvetica';">Nama pemilik kost atau pengelola yaitu Ibu Endang dan Nama Kos-kos san adalah Kost Kurnia. Kos ini berdiri dari <br> 8 Tahun yang lalu yaitu pada Tahun 2016, Kos ini memiliki nsejarah yang panjang dan berdiri setelah banyak perjuangan <br> yang dilakukan oleh ibu Endang dalam membangun sebuah kos yang nyaman, bersih dan aman serta lokasinya <br> yang strategis yaitu ditengah kota, yang dapat bermanfaat bagi pekerja maupun mahasiswa yang memiliki <br> pekerjaan / Pendidikan yang harus diselesaikan di semarang namun tidak punya tempat tinggal. </p>
+    </section>
+
+    <section class="mt-5">
+        <h3 class="text-center" style="font-family: 'Inter5';">Visi</h3>
+        <p class="text-center" style="font-family: 'helvetica';">Menjadi pilihan utama bagi penghuni kos yang mencari hunian <br> nyaman, aman, dan strategis dengan pelayanan terbaik.
+        </p>
+        <h3 class="text-center mt-4" style="font-family: 'Inter5';">Misi</h3>
+        <p class="text-center" style="font-family: 'helvetica';">1. Menyediakan fasilitas lengkap dan berkualitas yang mendukung kebutuhan penghuni. <br>2. Memberikan lingkungan yang aman, bersih , dan nyaman untuk mendukung produktivitas penghuni. <br>3. Menjalin hubungan baik dengan penghuni melalui pelayanan yang ramah, cepat, dan profesional. <br>4. memastikan harga sewa kompetitif dengan nilai tambah yang memuaskan. <br>5. Berkontribusi pada kenyamanan komunitas sekitar dengan menjaga etika dan tata tertib lingkungan.
+        </p>
+    </section>
+
+    <section class="mt-5">
+        <h3 class="text-center" style="font-family: 'Inter5';">Keunggulan Kost</h3> <br>
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="circle">1</div> <br> <br>
+                <h6 style="font-family: 'Inter5';">Tempat Parkir Motor <br> yang Luas dan Aman</h6> <br>
+                <p style="font-family: 'helvetica';">Memudahkan penghuni yang <br>memiliki kendaraan untuk parkir<br>tanpa khawatir akan kehilangan atau kerusakan</p>
+            </div>
+            <div class="col-md-3">
+                <div class="circle">2</div> <br> <br>
+                <h6 style="font-family: 'Inter5';">Kamar <br> Bervariasi</h6> <br>
+                <p style="font-family: 'helvetica';">Menjamin kenyamanan tinggal, <br>terutama di daerah dengan cuaca panas dengan adanya <br>
+                penyediaan kamar ber AC <br>maupun kipas angin</p>
+            </div>
+            <div class="col-md-3">
+                <div class="circle">3</div> <br> <br>
+                <h6 style="font-family: 'Inter5';">Lokasi di <br> Tengah Kota</h6> <br>
+                <p style="font-family: 'helvetica';">Strategis dan mudah dijangkau dari berbagai tempat penting <br>seperti pusat perbelanjaan, perkantoran, universitas, dan tempat hiburan. Menghemat waktu dan biaya transportasi penghuni.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="circle">4</div> <br> <br>
+                <h6 style="font-family: 'Inter5';">Keamanan Terjamin <br> dengan CCTV</h6> <br>
+                <p style="font-family: 'helvetica';">Sistem keamanan 24 jam yang <br>memberikan rasa tenang bagi penghuni bagi penghuni. Meminimalkan risiko <br> kejahatan dengan pemantauan <br> real-time di area kos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <h3 class="text-center" style="font-family: 'Inter5';">Layanan Yang Tersedia</h3> <br>
+        <div class="row text-center">
+            <div class="col-md-2">
+                <div class="circle">1</div> <br> <br>
+                <h5 style="font-family: 'Inter5';">Kamar Ber-AC</h5>
+            </div>
+            <div class="col-md-4">
+                <div class="circle">2</div> <br> <br>
+                <h5 style="font-family: 'Inter5';">Wi-Fi Berkecapatan <br>Tinggi</h5>
+            </div>
+            <div class="col-md-4">
+                <div class="circle">3</div> <br> <br>
+                <h5 style="font-family: 'Inter5';">Keamanan CCTV <br>24 Jam</h5>
+            </div>
+            <div class="col-md-2">
+                <div class="circle">4</div> <br> <br>
+                <h5 style="font-family: 'Inter5';">Dapur Bersama</h5>
+            </div>
+            <div class="col-md-4">
+                <div class="circle">5</div> <br> <br>
+                <h5 style="font-family: 'Inter5';">Laundry Mandiri atau <br>Layanan Laundry</h5>
+            </div>
+            <div class="col-md-4">
+                <div class="circle">6</div> <br> <br>
+                <h5 style="font-family: 'Inter5';">Furnitur Kamar</h5>
+            </div>
+            <div class="col-md-4">
+                <div class="circle">7</div> <br> <br>
+                <h5 style="font-family: 'Inter5';">Kamar Mandi dalam <br>atau Luar</h5>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-1">
+        <h3 class="text-center" style="font-family: 'Inter5'; margin-top: 350px;" >Kontak Kami</h3> 
+        <p class="text-center" style="font-family: 'helvetica';">Alamat, nomor telepon, whatsapp, dan email untuk pertanyaan atau pemesanan. <br>Jam operasional atau waktu yang tepat untuk menghubungi pemilik kos: <br>Jam operasional pemilik kos dapat dihubungi adalah sekitar Jam 09.00-18.00 WIB.</p>
+        <div class="photo-circle">
+            <img src="assets/portrait-satisfied-asian-man-with-blond-hair-standing-yellow-wall-showing-thumbs-up.png" alt="">
+        </div>
+    </section>
+<br>
+    <section class="text-center mt-5">
+        <h3 style="font-family: 'Inter5';">Galeri Foto Kost</h3> <br>
+        <div class="room-images text-center rounded">
+            <button class="prev-btn" onclick="changeImageIndex(-1)">&#10094;</button>
+            <img id="mainImage" src="assets/tampakdepan1.jpg" alt="Main Image" class="img-fluid rounded">
+            <button class="next-btn" onclick="changeImageIndex(1)">&#10095;</button>
+            <div class="thumbnail-container">
+                <img src="assets/tampakdepan1.jpg" alt="Thumbnail 1" class="thumbnail rounded" onclick="setCurrentImage(0)">
+                <img src="assets/dalam kamar 1.jpg" alt="Thumbnail 2" class="thumbnail rounded" onclick="setCurrentImage(1)">
+                <img src="assets/tampak depan2.jpg" alt="Thumbnail 3" class="thumbnail rounded" onclick="setCurrentImage(2)">
+                <img src="assets/lorong (1).jpg" alt="Thumbnail 4" class="thumbnail rounded" onclick="setCurrentImage(3)">
+                <img src="assets/jemuran.jpg" alt="Thumbnail 5" class="thumbnail rounded" onclick="setCurrentImage(4)">
+                <img src="assets/gerry.jpg" alt="Thumbnail 6" class="thumbnail rounded" onclick="setCurrentImage(5)">
+            </div>
+        </div>
+
+        <br>
+    <footer class="text-center mt-5 py-3">
+        <p>Copyright Kost Kurnia. All rights reserved.</p>
+        </footer>
+
+
+
+    <style>
+.room-images {
+    padding: o 2rem;
+      position: relative;
+      max-width: 1300px;
+      text-align: center;
+      margin: auto;
+    }
+    .room-images img {
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: cover;
+    }
+    .prev-btn, .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .prev-btn {
+      left: 10px;
+    }
+    .next-btn {
+      right: 10px;
+    }
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.thumbnail {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+.thumbnail.active {
+    border-color: #0d6efd;
+    position: relative;
+}
+
+.thumbnail.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #0d6efd;
+    position: absolute;
+    bottom: 800px;
+    left: 0;
+}
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+        .photo-circle {
+width: 250px; /* Sesuaikan ukuran */
+height: 250px;
+border-radius: 50%; /* Membuatnya menjadi lingkaran */
+overflow:hidden; /* Agar bagian yang melebihi lingkaran tersembunyi */
+border: 1px solid #180d39; /* Tambahkan border putih jika perlu */
+background-color: #180d39;
+position: absolute;
+top: 1580px;
+left: 645px;
+}
+
+.photo-circle img {
+width: 100%;
+height: 100%;
+object-fit:cover; /* Memastikan gambar memenuhi lingkaran */
+object-position: top;
+}
+    </style>
+
+<script>
+    function changeImage(imageSrc) {
+        document.getElementById('mainImage').src = imageSrc;
+    }
+    let images = ["assets/tampakdepan1.jpg", "assets/dalam kamar 1.jpg", "assets/tampak depan2.jpg", "assets/lorong (1).jpg" , "assets/jemuran.jpg" , "assets/gerry.jpg" ];
+let currentIndex = 0;
+
+function changeImageIndex(step) {
+    currentIndex = (currentIndex + step + images.length) % images.length;
+    updateImage();
+}
+
+function setCurrentImage(index) {
+    currentIndex = index;
+    updateImage();
+}
+
+function updateImage() {
+    document.getElementById('mainImage').src = images[currentIndex];
+    let thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentIndex);
+    });
+}
+
+// Initial call to set the active thumbnail on load
+updateImage();
+</script>
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

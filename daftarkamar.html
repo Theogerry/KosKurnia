@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daftar Kamar di Kost Kurnia - Temukan kamar sesuai kebutuhan Anda.">
+  <meta name="keywords" content="kost eksklusif, daftar kamar, kost kurnia, fasilitas kost">
+  <meta name="author" content="Kost Kurnia">
+  <title>Daftar Kamar - Kost Kurnia</title>
+  <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <style>
+        body {
+  background-color: #f4f4f4;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .badge {
+  display: block;
+  margin-top: 10px;
+}
+
+aside {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.nav-link {
+    color: #072f6a;
+  position: relative; /* Warna default */
+  padding-bottom: 5px;
+  text-decoration: none;
+  transition: color 0.6s ease, border-color 0.6s ease;
+}
+
+/* Warna teks dan garis bawah untuk item aktif */
+.nav-link.active {
+  color: #072f6a !important;
+  font-weight: bold !important; /* Warna teks ketika aktif */
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #072f6a; /* Warna garis */
+  transition: width 0.6s ease;
+}
+
+/* Warna teks saat hover */
+.nav-link:hover {
+  color: #072f6a; /* Warna teks saat hover */
+}
+
+/* Hover efek garis bawah */
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #072f6a; /* Warna garis saat hover */
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter/InterRegular.ttf') format('truetype');
+    font-family: 'helvetica';
+    src: url('/fonts/helvetica/Helvetica.ttf');
+    font-family: 'Inter2';
+    src: url('/fonts/inter/Inter-Italic-VariableFont_opsz\,wght.ttf');
+    font-family: 'Inter3';
+    src: url('/fonts/inter/Inter_28pt-Medium.ttf');
+    font-family: 'Inter4';
+    src: url('/fonts/inter/Inter_28pt-MediumItalic.ttf');
+    font-family: 'Inter5';
+    src: url('/fonts/inter/Inter_28pt-SemiBold.ttf');
+}
+.navbar-brand {
+    font-family: 'Inter5';
+    color: #01d0d2;
+    font-weight: bold;
+    font-size: 2vw;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    z-index: 1000;
+    background-color: #f4f4f4;
+}
+.navbar ul li a {
+  color: #072f6a; /* Warna teks default */
+  text-decoration: none; /* Hilangkan garis bawah */
+  transition: color 0.6s ease; /* Animasi perubahan warna */
+}
+
+.navbar ul li a:hover {
+  color: #072f6a; /* Warna teks saat hover */
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+.bg-dark {
+  background-color: #180d39 !important; /* Warna sidebar sesuai dengan yang diminta */
+}
+
+.text-white {
+  color: #ffffff !important; /* Teks putih di atas background gelap */
+}
+
+.card {
+  border: none;
+  border-radius: 8px;
+
+}
+
+.card-img-top {
+  width: 100%; /* Pastikan gambar sesuai dengan lebar card */
+  height: 300px; /* Sesuaikan tinggi gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+  border-top-left-radius: 8px; /* Radius untuk sudut kiri atas */
+  border-top-right-radius: 8px; /* Radius untuk sudut kanan atas */
+}
+
+.position-absolute {
+  border-radius: 4px;
+}
+
+.card-body h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+}
+
+.btn-success {
+  background-color: white; /* Warna tombol hijau */
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #2a8e9e;;             /*Warna tombol hijau saat hover */
+}
+
+.opacity-50 {
+  position: relative;
+}
+
+.opacity-50 .position-absolute {
+  font-size: 0.85rem;
+}
+
+.form-check-label {
+  font-size: 0.9rem;
+}
+
+.form-select, .form-check-input {
+  border-radius: 4px;
+}
+.search-container {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 50px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 600px;
+      position: absolute;
+      left: 460px;
+      top: 120px;
+    }
+
+    .search-container input {
+      flex: 1;
+      border: none;
+      padding: 15px 20px;
+      font-size: 16px;
+      border-radius: 50px 0 0 50px;
+      outline: none;
+    }
+
+    .search-container button {
+      background-color: #091e36;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 50px 50px 0;
+    }
+
+    .search-container button:hover {
+      background-color: #06406c;
+    }
+
+    .search-container button svg {
+      margin-left: 8px;
+    }
+    .form-check {
+      font-family: 'helvetica';
+    }
+    
+    </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #f4f4f4;">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color: #2a8e9e;">KOST KURNIA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="beranda.html" id="beranda">Beranda</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="daftarkamar.html" id="daftar-kamar">Daftar Kamar</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="tentang.html" id="tentang">Tentang</a>
+          </li>
+          <li class="nav-item ms-4">
+            <a class="btn btn-danger text-white" style="background-color: #072f6a ;" href="login.html">Masuk</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="search-container">
+    <input type="text" placeholder="Masukkan tipe kamar dan nomor kamar yang ingin dicari">
+    <button>
+        Cari
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.854 8.146a.5.5 0 0 0-.708.708L13.293 11H4a.5.5 0 0 0 0 1h9.293l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3z"/>
+      </svg>
+    </button>
+</div>
+</div>
+  <br><br><br><br><br>
+  <!-- Daftar Kamar Section -->
+  <div class="container">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <div class="bg-dark text-white p-4 rounded">
+          <h4 class="mb-4" style="text-align: center; font-family: 'Inter5';">ATUR PENCARIAN</h4>
+          <!-- Tipe Kost -->
+          <div class="mb-3">
+            <label for="tipe-kost" class="form-label" style="font-family: 'Inter5';">Tipe Kost:</label>
+            <select class="form-select" id="tipe-kost" style="font-family: 'helvetica';">
+              <option value="">Semua Tipe</option>
+              <option>Tipe A</option>
+              <option value="">Tipe B</option>
+              <option value="">Tipe C</option>
+            </select>
+          </div>
+          <!-- Jangka Waktu -->
+          <div class="mb-3">
+            <label for="jangka-waktu" class="form-label" style="font-family: 'Inter5';">Jangka Waktu:</label>
+            <select class="form-select" id="jangka-waktu" style="font-family: 'helvetica';">
+              <option>Bulanan</option>
+              <option value="">Tahunan</option>
+            </select>
+          </div>
+          <!-- Urutkan Berdasarkan Harga -->
+          <div class="mb-3">
+            <label for="urut-harga" class="form-label" style="font-family: 'Inter5';">Urutkan Berdasar Harga:</label>
+            <select class="form-select" id="urut-harga" style="font-family: 'helvetica';">
+              <option>Terendah - Tertinggi</option>
+              <option value="">Tertinggi - Terendah</option>
+            </select>
+          </div>
+          <!-- Fasilitas Kost -->
+          <div class="mb-3">
+            <p class="mb-2" style="font-family: 'Inter5';">Fasilitas Kost:</p>
+            <div class="form-check" style="font-family: 'helvetica';">
+              <input class="form-check-input" type="checkbox" id="laundry" checked>
+              <label class="form-check-label" for="laundry">Laundry</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="listrik" checked>
+              <label class="form-check-label" for="listrik">Listrik</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="keamanan" checked>
+              <label class="form-check-label" for="keamanan">Keamanan 24 Jam</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="kamar-dalam" checked>
+              <label class="form-check-label" for="kamar-dalam">Kamar Mandi Dalam</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="kamar-luar">
+              <label class="form-check-label" for="kamar-luar">Kamar Mandi Luar</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="kebersihan">
+              <label class="form-check-label" for="kebersihan">Kebersihan</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="pdam">
+              <label class="form-check-label-color-white" for="pdam">PDAM</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="wifi" checked>
+              <label class="form-check-label" for="wifi">WiFi</label>
+            </div>
+          </div>
+        <button class="btn btn-success w-100" style="color: black;">Cari</button>
+        </div>
+      </div>
+
+      <!-- Hasil Pencarian -->
+      <div class="col-md-9">
+        <h4 class="mb-4" style="font-family: 'Inter5';"><br><br><br>HASIL PENCARIAN &rsaquo;</h4>
+        <div class="row g-3">
+          <!-- Card 1 -->
+          <div class="col-md-4" style="font-family: 'helvetica';">
+            <div class="card bg-dark text-white">
+              <img src="/assets/foto kamar.jpg" class="card-img-top" alt="Kamar 1">
+              <div class="card-body">
+                <h5 class="card-title">Kamar Tipe ( A )</h5>
+                <p class="card-text">Tersedia</p>
+                <p class="card-text">Rp 1.500.000 / 2 org <br> Rp 1.200.000 / 1 org</p>
+               <a href="detailkamar.html" ><button class="btn btn-success w-100" style="color: black;">Detail</button></a>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4" style="font-family: 'helvetica';">
+            <div class="card bg-dark text-white">
+              <img src="/assets/foto kamar.jpg" class="card-img-top" alt="Kamar 3" style="opacity: 0.2; ">
+              <div class="bg-white text-dark px-2 py-1 fw-bold" style="position: absolute; top: 100px; left: 122px;">Penuh</div>
+              <div class="card-body">
+                <h5 class="card-title">Kamar Tipe ( B )</h5>
+                <p class="card-text">Tersedia</p>
+                <p class="card-text">Rp 850.000 / org</p> <br>
+              <a href="detailkamar2.html"><button class="btn btn-success w-100" style="color: black;">Detail</button></a> <br>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Card 3 -->
+          <div class="col-md-4" style="font-family: 'helvetica';">
+            <div class="card bg-dark text-white">
+              <img src="/assets/foto kamar.jpg" class="card-img-top" alt="Kamar 5">
+              <div class="card-body">
+                <h5 class="card-title">Kamar Tipe ( C )</h5>
+                <p class="card-text">Tersedia</p>
+                <p class="card-text">Rp 750.000 / org</p> <br>
+               <a href="detailkamar3.html"><button class="btn btn-success w-100" style="color: black;">Detail</button></a> <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-4" style="background-color: #f4f4f4;">
+    <div class="container text-center">
+      <p class="mb-0">Copyright Kost Kurnia. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search');
+    const checkboxes = document.querySelectorAll('.form-check-input');
+    const roomList = document.getElementById('roomList');
+
+    // Event untuk pencarian
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        const rooms = roomList.querySelectorAll('.col-md-4');
+        rooms.forEach(room => {
+            const title = room.querySelector('.card-title').textContent.toLowerCase();
+            if (title.includes(query)) {
+                room.style.display = '';
+            } else {
+                room.style.display = 'none';
+            }
+        });
+    });
+
+    // Event untuk filter
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const selectedFilters = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            const rooms = roomList.querySelectorAll('.col-md-4');
+            rooms.forEach(room => {
+                const facilities = room.dataset.facilities.split(',');
+                if (selectedFilters.every(filter => facilities.includes(filter))) {
+                    room.style.display = '';
+                } else {
+                    room.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+
+  </script>
+</body>
+</html>
